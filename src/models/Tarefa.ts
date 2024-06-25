@@ -1,23 +1,23 @@
 import * as enums from '../utils/enums/Tarefas'
 
 class Tarefa {
-  titulo: string
-  prioridade: enums.Prioridade
-  status: enums.Status
-  descricao: string
+  nome: string
+  tipoDeContato: enums.TipoDeContato
+  contato: string
+  email: string
   id: number
 
   constructor(
-    titulo: string,
-    prioridade: enums.Prioridade,
-    status: enums.Status,
-    descricao: string,
+    nome: string,
+    tipoDeContato: enums.TipoDeContato,
+    contato: string,
+    email: string,
     id: number
   ) {
-    this.titulo = titulo
-    this.prioridade = prioridade
-    this.status = status
-    this.descricao = descricao
+    this.nome = nome
+    this.tipoDeContato = tipoDeContato
+    this.contato = contato
+    this.email = email
     this.id = id
   }
 }

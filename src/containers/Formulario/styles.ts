@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Campo } from '../../styles'
 
 export const Form = styled.form`
   max-width: 547px;
@@ -7,7 +8,7 @@ export const Form = styled.form`
   font-weigth: bold;
   color: #666666;
 
-  textarea {
+  ${Campo} {
     resize: none;
     margin: 16px 0;
   }

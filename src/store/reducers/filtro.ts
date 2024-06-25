@@ -3,8 +3,8 @@ import * as enums from '../../utils/enums/Tarefas'
 
 type FiltroState = {
   termo?: string
-  criterio: 'prioridade' | 'status' | 'todas'
-  valor?: enums.Prioridade | enums.Status
+  criterio: 'tipodecontato' | 'todas'
+  valor?: enums.TipoDeContato
 }
 
 const initialState: FiltroState = {

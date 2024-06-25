@@ -31,31 +31,21 @@ const BarraLateral = ({ mostrarFiltros }: Props) => {
             />
             <S.Filtros>
               <FiltroCArd
-                valor={enums.Status.PENDENTE}
-                criterio="status"
-                legenda="pendetens"
+                valor={enums.TipoDeContato.CELULAR}
+                criterio="tipodecontato"
+                legenda="celular"
               />
               <FiltroCArd
-                valor={enums.Status.CONCLUIDA}
-                criterio="status"
-                legenda="concluídas"
+                valor={enums.TipoDeContato.COMERCIAL}
+                criterio="tipodecontato"
+                legenda="comercial"
               />
               <FiltroCArd
-                valor={enums.Prioridade.URGENTE}
-                criterio="prioridade"
-                legenda="urgentes"
+                valor={enums.TipoDeContato.RESIDENCIA}
+                criterio="tipodecontato"
+                legenda="residencia"
               />
-              <FiltroCArd
-                valor={enums.Prioridade.IMPORTANTE}
-                criterio="prioridade"
-                legenda="importantes"
-              />
-              <FiltroCArd
-                valor={enums.Prioridade.NORMAl}
-                criterio="prioridade"
-                legenda="normal"
-              />
-              <FiltroCArd criterio="todas" legenda="totas" />
+              <FiltroCArd criterio="todas" legenda="todos" />
             </S.Filtros>
           </>
         ) : (

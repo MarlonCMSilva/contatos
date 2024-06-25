@@ -1,10 +1,10 @@
-export enum Prioridade {
-  URGENTE = 'urgente',
-  IMPORTANTE = 'importante',
-  NORMAl = 'normal'
+export enum TipoDeContato {
+  CELULAR = 'celular',
+  RESIDENCIA = 'residencia',
+  COMERCIAL = 'comercial'
 }
 
-export enum Status {
-  PENDENTE = 'pendente',
-  CONCLUIDA = 'concluída'
-}
+// export enum Status {
+//   PENDENTE = 'pendente',
+//   CONCLUIDA = 'concluída'
+// }

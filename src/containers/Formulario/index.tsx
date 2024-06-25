@@ -12,19 +12,20 @@ const Fomulario = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [titulo, setTitulo] = useState('')
-  const [descricao, setDescricao] = useState('')
-  const [prioridade, setPrioridade] = useState(enums.Prioridade.NORMAl)
+  const [nome, setNome] = useState('')
+  const [contato, setNumero] = useState('')
+  const [email, setEmail] = useState('')
+  const [tipoDeContato, setPrioridade] = useState(enums.TipoDeContato.CELULAR)
 
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
 
     dispatch(
       cadastrar({
-        titulo,
-        prioridade,
-        descricao,
-        status: enums.Status.PENDENTE
+        nome,
+        contato,
+        email,
+        tipoDeContato
       })
     )
     navigate('/')
@@ -35,30 +36,36 @@ const Fomulario = () => {
       <Titulo>Nova Tarefa</Titulo>
       <Form onSubmit={cadastrarTarefa}>
         <Campo
-          value={titulo}
-          onChange={(evento) => setTitulo(evento.target.value)}
+          value={nome}
+          onChange={(evento) => setNome(evento.target.value)}
           type="text"
-          placeholder="Titulo"
+          placeholder="Nome do Contato"
         />
         <Campo
-          value={descricao}
-          onChange={({ target }) => setDescricao(target.value)}
-          as="textarea"
-          placeholder="Descrição da Tarefa"
+          value={contato}
+          onChange={({ target }) => setNumero(target.value)}
+          type="number"
+          placeholder="Numero do contato"
+        />
+        <Campo
+          value={email}
+          onChange={({ target }) => setEmail(target.value)}
+          type="text"
+          placeholder="email do contato"
         />
         <Opcoes>
           <p>Prioridade</p>
-          {Object.values(enums.Prioridade).map((prioridade) => (
+          {Object.values(enums.TipoDeContato).map((prioridade) => (
             <Opcao key={prioridade}>
               <input
                 value={prioridade}
                 name="importante"
                 type="radio"
                 onChange={(evento) =>
-                  setPrioridade(evento.target.value as enums.Prioridade)
+                  setPrioridade(evento.target.value as enums.TipoDeContato)
                 }
                 id={prioridade}
-                defaultChecked={prioridade === enums.Prioridade.NORMAl}
+                defaultChecked={prioridade === enums.TipoDeContato.CELULAR}
               />{' '}
               <label htmlFor={prioridade}>{prioridade}</label>
             </Opcao>

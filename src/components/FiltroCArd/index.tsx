@@ -6,8 +6,8 @@ import { RootReducer } from '../../store'
 
 export type Props = {
   legenda: string
-  criterio: 'prioridade' | 'status' | 'todas'
-  valor?: enums.Prioridade | enums.Status
+  criterio: 'tipodecontato' | 'todas'
+  valor?: enums.TipoDeContato
 }
 
 const FiltroCArd = ({ legenda, criterio, valor }: Props) => {
@@ -23,11 +23,8 @@ const FiltroCArd = ({ legenda, criterio, valor }: Props) => {
 
   const contaTarefas = () => {
     if (criterio === 'todas') return tarefas.itens.length
-    if (criterio === 'prioridade') {
-      return tarefas.itens.filter((item) => item.prioridade === valor).length
-    }
-    if (criterio === 'status') {
-      return tarefas.itens.filter((item) => item.status === valor).length
+    if (criterio === 'tipodecontato') {
+      return tarefas.itens.filter((item) => item.tipoDeContato === valor).length
     }
   }
 
